@@ -1,0 +1,25 @@
+{
+  "first_name": "Sebastian",
+  "last_name": "Valdes",
+  "address": "tercera avenida 1221",
+  "city": "San Miguel",
+  "country": "Chile",
+  "skills": [
+    "matar gente",
+    "jugar basquetbol",
+    "Urbanterror"
+  ],
+  "experience": [
+    {
+      "start_date": {
+        "year": "2015",
+        "month": "April",
+        "day": "13"
+      },
+      "end_date": {},
+      "company": "Lemontech",
+      "job": "Entry Web Developer",
+      "description": "asdasfasdas"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  </head>
+  <body>
+    <section id="curriculum">
+      <header class="personal_profile">
+        <h1>{{first_name}} {{last_name}}</h1>
+        <h2>{{address}}</h2>
+        <h2>{{city}}</h2>
+        <h2>{{country}}</h2>
+      </header>
+      <section class="skills">
+        <ul>
+          {{#each skills}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </section>
+      <section class="experience">
+      <ul>
+        {{#each experience}}
+        <li>{{company}}</li>
+         <li>{{job}}</li>
+        {{/each}}
+      </ul>
+        <!-- <table>
+          {{#each experience}}
+          <tr>
+            <td>
+              {{start_date.year}} - 
+              {{#if end_date}}
+                {{end_date.year}}
+              {{else}}
+                hoy
+              {{/if}}
+            </td>
+            <td>
+              <span>
+                <b>{{company}}, {{job}}</b>
+              </span>
+              <p>{{description}}</p>
+            </td>
+          </tr>
+          {{/each}}
+        </table> -->
+      </section>
+    </section>
+    <script>
+      (function() {
+        var cv = document.getElementById('curriculum');
+        var template = Handlebars.compile(cv.outerHTML);
+        var context = {
+          "first_name": "Sebastian",
+          "last_name": "Valdes",
+          "address": "tercera avenida 1221",
+          "city": "San Miguel",
+          "country": "Chile",
+          "skills": [
+            "matar gente",
+            "jugar basquetbol",
+            "Urbanterror"
+          ],
+          "experience": [
+            {
+              "start_date": {
+                "year": "2015",
+                "month": "April",
+                "day": "13"
+              },
+              "end_date": {},
+              "company": "Lemontech",
+              "job": "Entry Web Developer",
+              "description": "asdasfasdas"
+            }
+          ]
+        }
+
+        cv.outerHTML = template(context);
+      })();
+    </script>
+  </body>
+</html>
